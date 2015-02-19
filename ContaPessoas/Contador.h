@@ -11,8 +11,11 @@
 - (void)maisUmCueca;
 - (void)maisUmaGata;
 
++(Contador*) instance;
+
 -(int)getBoys;
 -(int)getGirls;
+-(int)getTotal;
 
 @end
 
