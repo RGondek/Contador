@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Contador.h"
 
-
 @implementation Contador {
     int boy;
     int girl;
 }
+
+@synthesize delegate;
 
 static Contador *_instance = nil;
 
@@ -33,11 +34,10 @@ static Contador *_instance = nil;
     return self;
 }
 
-- (void)maisUmCueca {
-    boy = boy + 1;
-}
-- (void)maisUmaGata {
-    girl++;
+- (void)addMulher:(BOOL)m {
+    if (m) { girl++; }
+    else { boy++; }
+    [delegate atualiza];
 }
 
 -(int)getBoys {

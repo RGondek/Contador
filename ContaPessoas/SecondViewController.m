@@ -17,19 +17,21 @@
 
 @implementation SecondViewController
 
--(void)atualizaLbl{
+-(void)updateLBL{
     _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
     _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
     _total.text = [NSString stringWithFormat:@"%d", [contador getTotal] ];
 }
 
+- (void)atualiza{
+    [self updateLBL];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     contador = [Contador instance];
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [self atualizaLbl];
+    contador.delegate = self;
+    [self updateLBL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +40,7 @@
 }
 
 - (IBAction)click:(id)sender {
-    [self atualizaLbl];
+    [self updateLBL];
 }
 
 

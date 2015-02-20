@@ -6,16 +6,26 @@
 //  Copyright (c) 2015 Vinicius Miana. All rights reserved.
 //
 
-@interface Contador : NSObject 
+#import <Foundation/Foundation.h>
 
-- (void)maisUmCueca;
-- (void)maisUmaGata;
+@protocol protocoloDelegate <NSObject>
+
+@required
+-(void)atualiza;
+
+@end
+
+@interface Contador : NSObject
+
+- (void)addMulher:(BOOL)m;
 
 +(Contador*) instance;
 
 -(int)getBoys;
 -(int)getGirls;
 -(int)getTotal;
+
+@property id <protocoloDelegate> delegate;
 
 @end
 

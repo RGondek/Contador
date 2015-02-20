@@ -29,12 +29,12 @@
 }
 
 - (IBAction)clickBoy:(id)sender {
-    [contador maisUmCueca];
+    [contador addMulher:NO];
     NSLog(@"Meninos - %i",[contador getBoys]);
 }
 
 - (IBAction)clickGirl:(id)sender {
-    [contador maisUmaGata];
+    [contador addMulher:YES];
     NSLog(@"Meninas - %i",[contador getGirls]);
 }
 
